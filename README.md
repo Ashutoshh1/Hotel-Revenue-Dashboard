@@ -1,69 +1,73 @@
-# hotel_revenue_project
 
-#Indentify The Stakeholders Query---
+# Hotel Revenue Project
 
-1).There is a need to know if hotel revenue is growing year over year in both types of hotels, as well as segmenting the revenue by type of hotel.
-
-2).Is there a trend in guests driving their own cars, and should our parking lot be expanded?
-
-#COLLECT RAW DATA SET---
-
-Data was downloaded from Kaggle for this project.
-
-#UPPLOAD DATA IN SQL DATABASE
-
-#DATA ANALYSIS USING SQL---
-
-First we need to join all year-wise table as one ---
-
-with hotels as (
-select * from dbo.['2018$']
-union
-select * from dbo.['2019$']
-union
-select * from dbo.['2020$'])
-
-select*from hotels
+Developing end-to-end data dashboards from database development, data extraction via SQL, and dashboard creation via POWER BI.
 
 
-Now Left Join All Hotels table with meal_cost$ and market_segment$ table---
+## OBJECTIVE
 
-with hotels as (
-select * from dbo.['2018$']
-union
-select * from dbo.['2019$']
-union
-select * from dbo.['2020$'])
+- There is a need to know if hotel revenue is growing year over year in both types of hotels, as well as segmenting the revenue by type of hotel.
 
-select*from hotels
-left join dbo.market_segment$
-on hotels.market_segment = market_segment$.market_segment 
-left join dbo.meal_cost$
-on meal_cost$.meal = hotels.meal
+- Is there a trend in guests driving their own cars, and should our parking lot be expanded?
+## Documentation
+
+Raw Data was taken from Kaggle,
+click on for- 
+[Raw Data](https://www.kaggle.com/datasets/ferranindata/hotel-revenue-data-project)
 
 
-#NOW ANALYSIS IN POWER BI
+## Required Skills
 
-First connect sql server with power bi 
-then write above sql query in power bi during connecting sql server 
+Language: SQL
 
-#HOTEL REVENUE TREND-----
-Now create a custom coloumn as Revenue---
-Custom Column formula = ([stays_in_week_nights] + [stays_in_weekend_nights])*([adr]*[1-Discount]) 
+Visualisation: Power BI
 
-Create a custom field for total nights---
-Total Nights = sum(stays_in_week_nights + stays_in_weekend_nights)
+## Roadmap
 
-#TREND IN GUEST WITH PERSONAL CARS---
-For this we need parking percentage with total nights
-
-NOW WRITE A QUERY IN POWER BI DAX FOR ANALYSING PARKING TREND--
-Parking Percentage = SUM[required_car_parking_spaces]/[Total Nights]
+- UPPLOAD DATA IN SQL DATABASE
+- DATA ANALYSIS USING SQL
+- ANALYSIS IN POWER BI
 
 
-#RESULT FROM INTERPRETATING ABOVE TREND-----
+## DATA ANALYSIS USING SQL
 
-1).Hotel Revenue is growing year over year in both types of hotels.
+ Join all year-wise table as one table ---
 
-2).There is no need to Expand the Parking lot.
+    with hotels as 
 
+    ( select * from dbo.['2018$'] union select * from dbo.['2019$'] union select * from dbo.['2020$'])
+
+    select*from hotels
+
+ Now Left Join All Hotels table with meal_cost$ and market_segment$ table---
+
+    with hotels as 
+
+    ( select * from dbo.['2018$'] union select * from dbo.['2019$'] union select * from dbo.['2020$'])
+
+    select*from hotels 
+
+    left join dbo.market_segment$ on hotels.market_segment = market_segment$.market_segment 
+   
+    left join dbo.meal_cost$ on meal_cost$.meal = hotels.meal
+
+
+## ANALYSIS USING POWER BI
+
+- Connect sql server with power bi
+
+
+- create a custom coloumn as 
+
+      Revenue = ([stays_in_week_nights] + [stays_in_weekend_nights])*([adr]*[1-Discount])
+
+- Create a custom field in DAX as 
+
+      Total Nights = sum(stays_in_week_nights + stays_in_weekend_nights)
+
+      Parking Percentage = SUM[required_car_parking_spaces]/[Total Nights]
+## INTERPRETATION FROM DASHBOARD
+
+- Hotel Revenue is growing year over year in both types of hotels.
+
+- There is no need to Expand the Parking lot.
