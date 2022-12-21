@@ -11,7 +11,7 @@ Developing end-to-end data dashboards from database development, data extraction
 - There is a need to know if hotel revenue is growing year over year in both types of hotels, as well as segmenting the revenue by type of hotel.
 
 - Is there a trend in guests driving their own cars, and should our parking lot be expanded?
-## Documentation
+## Data Set
 
 Raw Data was taken from Kaggle,
 click on for- 
