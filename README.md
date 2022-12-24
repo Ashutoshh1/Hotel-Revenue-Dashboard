@@ -3,8 +3,6 @@
 
 Developing end-to-end data dashboards from database development, data extraction via SQL, and dashboard creation via POWER BI.
 
-![hotelrevenue](https://user-images.githubusercontent.com/118931406/208079130-7bf26347-fe73-4e01-aa92-2e910eb4a987.gif)
-
 
 ## OBJECTIVE
 
