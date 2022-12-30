@@ -1,5 +1,5 @@
 
-# Hotel Revenue Project
+# Hotel Revenue Dashboard
 
 Developing end-to-end data dashboards from database development, data extraction via SQL, and dashboard creation via POWER BI.
 
